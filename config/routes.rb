@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :afiliations
       resources :characters
+      resources :favorites
       resources :users
     end
   end     
