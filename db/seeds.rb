@@ -6,5 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
+Afiliation.delete_all
 
 User.create(name: "paul", username: "paul", password: "password", email: "paul@yahoo.com")
+
+thundercats = Afiliation.create(name: "Thundercats")
+lunataks = Afiliation.create(name: "Lunataks")
+mutants = Afiliation.create(name: "Mutant")
+
