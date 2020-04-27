@@ -7,7 +7,6 @@ class CreateCharacters < ActiveRecord::Migration[6.0]
       t.string :species
       t.string :overview
       t.boolean :favorite
-      
       t.belongs_to :afiliation, null: false, foreign_key: true
 
       t.timestamps
