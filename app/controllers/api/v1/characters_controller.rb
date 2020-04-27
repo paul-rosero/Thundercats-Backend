@@ -4,13 +4,14 @@ class Api::V1::CharactersController < ApplicationController
   # GET /characters
   def index
     @characters = Character.all
-
-    render json: @characters
+    json_chars = CharacterSerializer.new(@characters).serialized_json
+    render json: json_chars
   end
 
   # GET /characters/1
   def show
-    render json: @character
+    json_char = CharacterSerializer.new(@character).serialized_json
+    render json: json_char
   end
 
   # POST /characters
