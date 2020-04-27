@@ -28,12 +28,10 @@ ActiveRecord::Schema.define(version: 2020_04_26_005104) do
     t.string "species"
     t.string "overview"
     t.boolean "favorite"
-    t.bigint "user_id", null: false
     t.bigint "afiliation_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["afiliation_id"], name: "index_characters_on_afiliation_id"
-    t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -55,7 +53,6 @@ ActiveRecord::Schema.define(version: 2020_04_26_005104) do
   end
 
   add_foreign_key "characters", "afiliations"
-  add_foreign_key "characters", "users"
   add_foreign_key "favorites", "characters"
   add_foreign_key "favorites", "users"
 end
