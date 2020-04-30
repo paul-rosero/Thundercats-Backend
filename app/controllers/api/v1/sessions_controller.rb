@@ -13,7 +13,12 @@ class Api::V1::SessionsController < ApplicationController
         if logged_in?
             render json: current_user 
         else
-            render json: {notice: "You are logged off, no one is logged in"}
+            render json: {notice: "You are logged off."}
         end
+    end
+
+    def destroy
+        session.clear
+        render json: {notice: "You are now logged off."}
     end
 end
