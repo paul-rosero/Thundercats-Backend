@@ -13,7 +13,7 @@ class Api::V1::SessionsController < ApplicationController
         if logged_in?
             render json: UserSerializer.new(current_user) 
         else
-            render json: {notice: "You are logged off."}
+            render json: {notice: "You're logged off."}
         end
     end
 
