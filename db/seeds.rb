@@ -10,8 +10,8 @@ Afiliation.delete_all
 Character.delete_all
 Favorite.delete_all
 
-paul = User.create(name: "paul", username: "paul", password: "password", email: "paul@yahoo.com")
-gair = User.create(name: "gair", username: "gair", password: "password", email: "gair@yahoo.com")
+paul = User.create(name: "paul", username: "paul", password: "password", email: "paul")
+gair = User.create(name: "gair", username: "gair", password: "password", email: "gair")
 
 thundercats = Afiliation.create(name: "Thundercats")
 lunataks = Afiliation.create(name: "Lunataks")
