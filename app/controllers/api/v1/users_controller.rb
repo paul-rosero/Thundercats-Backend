@@ -1,17 +1,21 @@
 class Api::V1::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
-  # GET /users
-  def index
-    @users = User.all
-    json_user = UserSerializer.new(@users).serialized_json
-    render json: json_user
-  end
+  # # GET /users
+  # def index
+  #   @users = User.all
+  #   json_user = UserSerializer.new(@users).serialized_json
+  #   render json: json_user
+  # end
 
   # GET /users/1
   def show
-    json_user = UserSerializer.new(@user).serialized_json
-    render json: json_user
+    if logged_in?
+      json_user = UserSerializer.new(@user).serialized_json
+      render json: json_user
+    else
+      render json: { error: "You must be logged in to see anything!"}
+    end
   end
 
   # POST /users
@@ -39,7 +43,14 @@ class Api::V1::UsersController < ApplicationController
 
   # DELETE /users/1
   def destroy
-    @user.destroy
+    if @user.destroy
+      render json: { data: "User Successuflly was deleted!" }
+    else
+      error_resp = {
+        error: "User was not deleted, Please Try Again"
+      }
+      render json: error_resp
+    end
   end
 
   private
