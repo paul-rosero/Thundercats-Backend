@@ -106,6 +106,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -192,6 +193,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   fast_jsonapi
   listen (>= 3.0.5, < 3.2)
+  pg (>= 0.18, < 2.0)
   pry
   puma (~> 4.3)
   rack-cors
